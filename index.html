@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"><!--definindo letras para padrão brasileiro-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--pagina responsiva-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"><!--adicionando w3css-->
+    <link rel="stylesheet" href="style.css"><!--linkando css-->
+    <link rel="icon" href="icon.jfif" type="image/png"> <!--icon navegador-->
+    <!--fontes-->
+    <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&family=Sanchez:ital@1&display=swap" rel="stylesheet">
+    <title>Aplicação Escola</title>
+</head>
+<body>
+    <div class="w3-container"><!--container para a página toda-->
+        <center><h2 class="w3-orange w3-round-large w3-animate-top" style="width:25%;">CADASTRO DE NOTAS</h2></center>
+        <br><br><center>
+            <!--criando um div para o formulário-->
+        <div class="w3-card-4 w3-padding-32 w3-center w3-round-large w3-indigo w3-center w3-animate-top" style="width:75%;">
+            <!--formulário-->
+        <form id="formularioAluno">
+            <label for="aluno"></label>
+            <input type="text" id="aluno" required placeholder="nome do aluno" class="w3-round">
+            <label for="email"></label>
+            <input type="email" id="email" required placeholder="email@email.com" class="w3-round">
+            <label for="curso">Curso:</label>
+            <select id="curso" required class="w3-round">
+                <option value="ADS">ADS</option>
+                <option value="ADM">ADM</option>
+                <option value="ENF">ENF</option>
+            </select>
+            <label for="periodo">Período:</label>
+            <select id="periodo" required class="w3-round">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+            <!--Com função de limitar nota no app-->
+            <label for="nota1"></label>
+            <input type="number" id="nota1" required class="w3-round" placeholder="Nota 1" min="1" max="10" oninput="limitarNota(this)"><!--validação em tempo real-->
+            <label for="nota2"></label>
+            <input type="number" id="nota2" required class="w3-round" placeholder="Nota 2" min="1" max="10" oninput="limitarNota(this)">
+            <!--adicionando e acionando botões no clique-->
+            <button type="button" class="w3-button w3-blue w3-round-large" onclick="adicionarAluno()">Adicionar</button>
+            <button type="button"  class="w3-button w3-white w3-round-large" onclick="limparFormulario()">Limpar</button>
+        </form>
+        </div>
+        </center>
+    </div>
+<br><br>
+<!--tabela onde serão exibidos os dados cadastrados-->
+    <div class="w3-container w3-round-large w3-animate-bottom ">
+       <center> <h2 class="w3-orange w3-round-large w3-center" style="width: 30%;">Lista de Alunos</h2></center> <!--titulo tabela-->
+        <table class="w3-table-all w3-hoverable">
+            <thead>
+                <tr class="w3-indigo w3-centered">
+                    <th>Aluno</th>
+                    <th>Email</th>
+                    <th>Curso</th>
+                    <th>Período</th>
+                    <th>Nota Final</th>
+                    <th>Resultado</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="listaAlunos">
+                <!-- Dados irão aqui -->
+            </tbody>
+        </table>
+    </div>
+    <!--footer definido no style-->
+    <footer>Desenvolvido por Wueverton Caetano</footer>
+    <script src="app.js"></script>
+</body>
+</html>

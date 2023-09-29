@@ -1,0 +1,24 @@
+body {
+    background-image: url('bg2.png'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Define a altura para ocupar a tela inteira */
+    font-family: 'Roboto', sans-serif;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /*background-color: #333; /* Cor de fundo do footer */
+    /*color: white; /* Cor do texto no footer */
+    padding: 10px; /* Espaçamento interno no footer */
+    text-align: center;
+}
+
+h2{
+    font-family: 'Sanchez', sans-serif;
+}
